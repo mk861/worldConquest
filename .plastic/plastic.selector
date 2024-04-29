@@ -1,0 +1,4 @@
+repository "worldDomination@mk618@cloud"
+  path "/"
+    br "/main"
+    co "/main"
