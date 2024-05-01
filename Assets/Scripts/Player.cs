@@ -27,56 +27,79 @@ public class Player : MonoBehaviour
         if (!IsTurn)
             return;
 
-        // If we are in placing starting troops, place 1 troop at the click location
-        if (SpawnedTroops < TroopsCount && GameManager.Instance.GameState == GameManager.State.PlacingStartingTroops)
+        if (GameManager.Instance.GameState == GameManager.State.PlacingStartingTroops)
         {
-            if (TroopsCount <= 0)
-            {
-                Debug.Log("Not enough troops");
-                return;
-            }
-
-            if (TerritoryManager.Instance.GetTerritoryOwner(e.clickedTerritory.territory) != null)
-            {
-                Debug.Log("This territory is already controlled by " + TerritoryManager.Instance.GetTerritoryOwner(e.clickedTerritory.territory).PlayerName);
-                return;
-            }
-
-            PlaceTroop();
-            GameManager.Instance.GoNextTurn();
-        }
-        else if (SpawnedTroops < TroopsCount && GameManager.Instance.GameState == GameManager.State.PlacingExtraTroops)
-        {
-            if (TroopsCount <= 0)
-            {
-                Debug.Log("Not enough troops");
-                return;
-            }
-
-            Player territoryOwner = TerritoryManager.Instance.GetTerritoryOwner(e.clickedTerritory.territory);
-            if (territoryOwner != this)
-            {
-                Debug.Log("This territory is already controlled by " + TerritoryManager.Instance.GetTerritoryOwner(e.clickedTerritory.territory).PlayerName);
-                return;
-            }
-
-            PlaceTroop();
+            PlacingStartingUnits(e.clickedTerritory.territory);
+            return;
         }
 
-        void PlaceTroop()
+        if (GameManager.Instance.GameState == GameManager.State.PlacingExtraTroops)
         {
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePosition.z = 0;
-            GameObject spawnedTroop = Instantiate(troopPrefab, mousePosition, Quaternion.identity, transform);
-            var troop = spawnedTroop.GetComponent<Troop>();
-            troop.Owner = this;
-            troop.TerritoryAssigned = e.clickedTerritory.territory;
-            SpawnedTroops++;
-            TerritoryManager.Instance.AssignTerritory(e.clickedTerritory.territory, this);
-            e.clickedTerritory.territory.AddTroop(troop);
-            Debug.Log("Territory " + e.clickedTerritory.territory.TerritoryName + " now controlled by " + PlayerName);
-        }
+            PlacingExtraUnits(e.clickedTerritory.territory);
+            return;
+        }       
     }
+
+    public void PlacingStartingUnits(Territory t, Transform location = null)
+    {
+        if (SpawnedTroops >= TroopsCount)
+            return;
+
+        if (TroopsCount <= 0)
+        {
+            Debug.Log("Not enough troops");
+            return;
+        }
+
+        if (TerritoryManager.Instance.GetTerritoryOwner(t) != null)
+        {
+            Debug.Log("This territory is already controlled by " + TerritoryManager.Instance.GetTerritoryOwner(t).PlayerName);
+            return;
+        }
+
+        PlaceTroop(t, location);
+        GameManager.Instance.GoNextTurn();
+    }
+
+    public void PlacingExtraUnits(Territory t)
+    {
+        if (SpawnedTroops >= TroopsCount)
+            return;
+
+        if (TroopsCount <= 0)
+        {
+            Debug.Log("Not enough troops");
+            return;
+        }
+        
+        if (!AmIOwner(t))
+        {
+            Debug.Log("This territory is already controlled by " + TerritoryManager.Instance.GetTerritoryOwner(t).PlayerName);
+            return;
+        }
+
+        PlaceTroop(t);
+    }
+
+    void PlaceTroop(Territory t, Transform location = null)
+    {
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (location != null)
+            mousePosition = location.transform.position;
+        mousePosition.z = 0;
+
+
+        GameObject spawnedTroop = Instantiate(troopPrefab, mousePosition, Quaternion.identity, transform);
+        var troop = spawnedTroop.GetComponent<Troop>();
+        troop.Owner = this;
+        troop.TerritoryAssigned = t;
+        SpawnedTroops++;
+        TerritoryManager.Instance.AssignTerritory(t, this);
+        t.AddTroop(troop);
+        Debug.Log("Territory " + t.TerritoryName + " now controlled by " + PlayerName);
+    }
+
+    public bool AmIOwner(Territory t) => TerritoryManager.Instance.GetTerritoryOwner(t) == this;
 
     private void OnDisable()
     {

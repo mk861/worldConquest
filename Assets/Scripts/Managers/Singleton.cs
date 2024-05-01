@@ -8,7 +8,7 @@ using System.Collections;
 [DefaultExecutionOrder(-30000)]
 public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 {
-    #region Public Variables
+    #region Singleton Management
 
     private static T _instance;
 
@@ -43,26 +43,17 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
         }
     }
 
-    #endregion //Public Variables
+    #endregion // Singleton Management
 
 
-
-    #region Private Variables
-
-
-
-    #endregion //Private Variables
-
-
-
-    #region Unity Engine & Events
+    #region Unity Specific Functions
 
     protected virtual void Awake()
     {
         CreateInstance();
     }
 
-    #endregion //Unity Engine & Events
+    #endregion // Unity Specific Functions
 
     private void CreateInstance()
     {

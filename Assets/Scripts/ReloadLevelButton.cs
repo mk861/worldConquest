@@ -22,35 +22,10 @@ namespace MS.UI
 
 		#endregion //Inspector
 
-		private Button _Button;
-		private Button Button
-		{
-			get
-			{
-				if (_Button == null) _Button = GetComponent<Button>();
-				return _Button;
-			}
-			set
-			{
-				_Button = value;
-			}
-		}
-
 		#region Unity Engine & Events
-
-		private void OnEnable()
-		{
-			Button.onClick.AddListener(OnClick);
-		}
-
-		private void OnClick()
+		public void Reload()
 		{
 			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-		}
-
-		private void OnDisable()
-		{
-			Button.onClick.RemoveListener(OnClick);
 		}
 
 		#endregion //Unity Engine & Events

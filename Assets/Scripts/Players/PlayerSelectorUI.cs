@@ -58,7 +58,7 @@ public class PlayerSelectorUI : MonoBehaviour
         //   PlayerSelectorData player = new PlayerSelectorData();
         //   player.playerName = Random.Range(0, 9999).ToString();
         //  player.playerPrefab.transform.position = player.playerPosition;
-        //  players.Add(player);
+        //  players.Add(player); MoveTroopsStage
     }
 
     [Button]

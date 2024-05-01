@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class TerritoryManager : MonoBehaviour
@@ -8,6 +9,8 @@ public class TerritoryManager : MonoBehaviour
     //which player owns which territory
     private Dictionary<Territory, Player> territoryOwnership = new Dictionary<Territory, Player>();
     private TerritoryMonoBehaviour[] territoryMonoBehaviours;
+
+    public List<Territory> Territories => territoryMonoBehaviours.Select(t => t.territory).ToList();
 
     private void Awake()
     {

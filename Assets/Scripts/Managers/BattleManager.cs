@@ -77,26 +77,28 @@ namespace WorldDomination
             ResetBattle();
         }
 
-        private void OnEnable()
-        {
-            GameManager.OnTurnEnd += GameManager_OnTurnEnd;
-        }
+        //private void OnEnable()
+        //{
+        //    GameManager.OnTurnEnd += GameManager_OnTurnEnd;
+        //}
 
-        private void GameManager_OnTurnEnd(object sender, GameManager.OnTurnEndEventArgs e)
-        {
-            if (AttackingTroops.Count == 0 || DefendingTroops.Count == 0)
-            {
-                GameManager.Instance.GoNextTurn();
-                return;
-            }
+        //private void GameManager_OnTurnEnd(object sender, GameManager.OnTurnEndEventArgs e)
+        //{
+        //    GameManager.Instance.GoNextTurn();
 
-            ExecuteBattle();
-        }
+        //    if (AttackingTroops.Count == 0 || DefendingTroops.Count == 0)
+        //    {
+        //        GameManager.Instance.GoNextTurn();
+        //        return;
+        //    }
 
-        private void OnDisable()
-        {
-            GameManager.OnTurnEnd -= GameManager_OnTurnEnd;
-        }
+        //    ExecuteBattle();
+        //}
+
+        //private void OnDisable()
+        //{
+        //    GameManager.OnTurnEnd -= GameManager_OnTurnEnd;
+        //}
 
         #endregion //Unity Engine & Events
 
@@ -142,13 +144,19 @@ namespace WorldDomination
             return (DefendingTerritory == null) || string.IsNullOrEmpty(DefendingTerritory.TerritoryID) || territory == DefendingTerritory;
         }
 
-        public void ExecuteBattle()
+        public IEnumerator ExecuteBattle()
         {
-            StartCoroutine(BattleRoutine());
+            yield return StartCoroutine(BattleRoutine());
+            GameManager.Instance.SetState(GameManager.State.Fortify);
         }
 
         private IEnumerator BattleRoutine()
         {
+            if (AttackingTroops.Count == 0 || DefendingTroops.Count == 0)
+            {
+                yield break;
+            }
+
             List<int> attackerDiceRolls = new List<int>();
             List<int> defenderDiceRolls = new List<int>();
 
@@ -172,7 +180,7 @@ namespace WorldDomination
             // Sort dice rolls from highest to lowest
             attackerDiceRolls.Sort();
             defenderDiceRolls.Sort();
-            // Reverse the sorted lists to get highest to lowest
+            // Reverse lists to get highest to lowest
             attackerDiceRolls.Reverse();
             defenderDiceRolls.Reverse();
             Debug.Log("Attacked highest: " + attackerDiceRolls[0] + " Defender highest: " + defenderDiceRolls[0]);
@@ -190,6 +198,7 @@ namespace WorldDomination
                 Destroy(troopObject);
 
                 // No troop left in the territory, set owner to null
+                //CHANGE THIS!!!!!!!!!!!!!!!!!!!!! TERRITORY OWNER CAN'T BE NULL
                 if (DefendingTerritory.TroopsCount <= 0)
                 {
                     TerritoryManager.Instance.RemoveTerritory(DefendingTerritory);
@@ -211,6 +220,7 @@ namespace WorldDomination
                 AttackingTerritory.RemoveTroops(1);
                 Destroy(troopObject);
 
+                //AGAIN, TERRITORY OWNER CAN'T BE NULL
                 if (AttackingTerritory.TroopsCount <= 0)
                 {
                     TerritoryManager.Instance.RemoveTerritory(AttackingTerritory);
@@ -234,8 +244,6 @@ namespace WorldDomination
             {
                 AttackingTroops[i].ReturnToInitialPosition();
             }
-
-            GameManager.Instance.GoNextTurn();
 
             ResetBattle();
         }
