@@ -19,6 +19,9 @@ public class PlayerManager : Singleton<PlayerManager>
 
     public int CurrentPlayerTurnIndex { get; private set; }
 
+    //added
+    public Player CurrentPlayer { get { return playerList[CurrentPlayerTurnIndex]; } }
+
     public void SetPlayers(List<Player> players)
     {
         playerList = players;

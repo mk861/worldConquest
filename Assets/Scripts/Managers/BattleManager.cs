@@ -26,6 +26,15 @@ namespace WorldDomination
         private OnBattleCompletedEventArgs onBattleCompletedEventArgs = new OnBattleCompletedEventArgs();
         public static event System.EventHandler<OnBattleCompletedEventArgs> OnBattleCompleted;
 
+        //added
+        public class OnTerritoryConqueredEventArgs : System.EventArgs
+        {
+            public Territory conqueredTerritory;
+            public Player conqueringPlayer;
+        }
+        private OnTerritoryConqueredEventArgs onTerritoryConqueredEventArgs = new OnTerritoryConqueredEventArgs();
+        public static event System.EventHandler<OnTerritoryConqueredEventArgs> OnTerritoryConquered;
+
         #region Inspector
 
         [SerializeField]
@@ -195,13 +204,21 @@ namespace WorldDomination
                 DefendingTerritory.RemoveTroops(1);
                 // Remove a troop from the defending territory and player
                 DefendingTroops.RemoveAt(0);
-                Destroy(troopObject);
+
+                //MIGHT NOT NEED THIS? 
+                //Destroy(troopObject);
 
                 // No troop left in the territory, set owner to null
                 //CHANGE THIS!!!!!!!!!!!!!!!!!!!!! TERRITORY OWNER CAN'T BE NULL
                 if (DefendingTerritory.TroopsCount <= 0)
                 {
                     TerritoryManager.Instance.RemoveTerritory(DefendingTerritory);
+
+                    //added
+                    //territory conquered
+                    onTerritoryConqueredEventArgs.conqueredTerritory = DefendingTerritory;
+                    onTerritoryConqueredEventArgs.conqueringPlayer = AttackingTroops[0].Owner;
+                    OnTerritoryConquered?.Invoke(this, onTerritoryConqueredEventArgs);
                 }
                 if (AttackingTerritory.TroopsCount <= 0)
                 {
@@ -211,6 +228,9 @@ namespace WorldDomination
                 onBattleCompletedEventArgs.winningTerritory = AttackingTerritory;
                 onBattleCompletedEventArgs.losingTerritory = DefendingTerritory;
                 OnBattleCompleted?.Invoke(this, onBattleCompletedEventArgs);
+
+                //added
+                Destroy(troopObject);
             }
             else
             {

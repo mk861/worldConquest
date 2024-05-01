@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using WorldDomination;
 
 //this class is attached to each territory sprite which uses an instance to Territory class to manage game logic for each territory.
 //this script handles unity-specific functionality like user input (I think???????)
@@ -19,6 +20,8 @@ public class TerritoryMonoBehaviour : MonoBehaviour
     public Territory territory;
     public TerritoryMonoBehaviour[] adjacentTerritories;
     public TextMesh troopCountText; //reference to TextMesh displaying troop counts but will probably change this
+    //added
+    public Card territoryCard;
 
     void Start()
     {

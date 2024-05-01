@@ -17,6 +17,15 @@ public class Player : MonoBehaviour
     public bool IsTurn { get; set; } = false;
     public bool HasWon { get; set; } = false;
 
+    //added
+    public List<Card> Cards { get; private set; } = new List<Card>();
+
+    //added
+    private void Awake()
+    {
+        Cards = new List<Card>();
+    }
+
     private void OnEnable()
     {
         TerritoryMonoBehaviour.OnClick += TerritoryMonoBehaviour_OnClick;
