@@ -76,6 +76,7 @@ public class PlayerManager : Singleton<PlayerManager>
     /// <returns></returns>
     private int GetTroopsByPlayerAmount(int playerAmount)
     {
+        Debug.Log("in the problem loop");
         for (int i = troopsByPlayerAmountsSettings.Count - 1; i >= 0; i--)
         {
             if (playerAmount >= troopsByPlayerAmountsSettings[i].playerAmount)
