@@ -71,7 +71,6 @@ namespace WorldDomination
         #region Properties
         //public Timer timer;
 
-        //added
         public GameObject map;
 
         public State GameState;
@@ -97,7 +96,7 @@ namespace WorldDomination
         #region Unity Engine & Events
         private void Start()
         {
-            //map.SetActive(false);
+            map.SetActive(false);
             currentTurnText.text = "Waiting for players to be confirmed";
             Debug.Log("waiting for players to be chosen");
             GameState = State.Idle;
@@ -133,7 +132,7 @@ namespace WorldDomination
         private void OnPlayersConfirmed(object sender, PlayerSelectorUI.OnPlayersConfirmedEventArgs e)
         {
             playersSelectionUi.SetActive(false);
-            //map.SetActive(true); 
+            map.SetActive(true);
             GameState = State.PlacingStartingTroops;
             CurrentTurnValue = 1;
             PlayerManager.Instance.StartFirstTurn();
