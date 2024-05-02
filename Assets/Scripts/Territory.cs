@@ -79,6 +79,7 @@ public class Territory
         UpdateTroopCountDisplay();
     }
 
+
     //assign ownership of territory to different player
     public void ChangeOwnership(Player newOwner)
     {

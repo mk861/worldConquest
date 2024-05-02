@@ -240,8 +240,8 @@ namespace WorldDomination
                 OnBattleCompleted?.Invoke(this, onBattleCompletedEventArgs);
 
                 //added
-                
-                
+
+
             }
             else
             {

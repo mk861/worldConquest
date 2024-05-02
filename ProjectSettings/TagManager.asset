@@ -10,6 +10,7 @@ TagManager:
   - Africa
   - Oceana
   - Asia
+  - World
   layers:
   - Default
   - TransparentFX
