@@ -50,9 +50,13 @@ namespace WorldDomination
 
         private void OnTerritoryConquered(object sender, BattleManager.OnTerritoryConqueredEventArgs e)
         {
+            Debug.Log("In cardmanager onterritoryconquered");
             Card card = e.conqueredTerritory.TerritoryMonoBehaviour.territoryCard;
             if (card == null)
+            {
+                Debug.Log("In cardmanager if");
                 return;
+            }
 
             // Animate the card popup and add the card to the player's hand
             StartCoroutine(AnimateCardPopUp(card));
@@ -69,7 +73,7 @@ namespace WorldDomination
 
         #endregion //Unity Engine & Events
 
-        private IEnumerator AnimateCardPopUp(Card card)
+        public IEnumerator AnimateCardPopUp(Card card)
         {
             cardUi.gameObject.SetActive(true);
             cardUi.sprite = card.cardSprite;
@@ -95,4 +99,5 @@ namespace WorldDomination
             cardUi.gameObject.SetActive(false);
         }
     }
+
 }

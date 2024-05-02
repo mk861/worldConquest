@@ -748,7 +748,7 @@ MonoBehaviour:
   - {fileID: 1358296605}
   - {fileID: 1548951822}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: 4d6128903cdfce8499c86a6fb13f195d, type: 2}
 --- !u!114 &68114025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1168,7 +1168,7 @@ MonoBehaviour:
   - {fileID: 1704164573}
   - {fileID: 180447353}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: 41a19052d83cb7e4c854a0185df40abf, type: 2}
 --- !u!114 &72733553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1588,7 +1588,7 @@ MonoBehaviour:
   - {fileID: 455543407}
   - {fileID: 325805349}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: fe8198c59a6bfa04dbcaaab0e56ae892, type: 2}
 --- !u!114 &78864536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1636,7 +1636,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 4294967295
 --- !u!114 &109871606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1977,7 +1977,7 @@ MonoBehaviour:
   - {fileID: 201460003}
   - {fileID: 1530169535}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: a20cac1b6602f78438395c983bd8a093, type: 2}
 --- !u!114 &118149438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2524,7 +2524,7 @@ MonoBehaviour:
   - {fileID: 1601613364}
   - {fileID: 1903966838}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: 8be0c4fbfbd4e6844b7ac3cb7ee66b4d, type: 2}
 --- !u!114 &131792451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2845,7 +2845,7 @@ MonoBehaviour:
   - {fileID: 668337544}
   - {fileID: 201460003}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: 5e54074b70968334d9a9c0af627db933, type: 2}
 --- !u!114 &171616290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3249,7 +3249,7 @@ MonoBehaviour:
   - {fileID: 624906932}
   - {fileID: 325805349}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: f8116d2818c4ed34384f390c1b1236a2, type: 2}
 --- !u!114 &180447354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3346,7 +3346,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 17.75
+  m_fontSize: 26.85
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3979,7 +3979,7 @@ MonoBehaviour:
   - {fileID: 171616289}
   - {fileID: 668337544}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: 64bbdab3f5e2add408b36d8149c5d682, type: 2}
 --- !u!114 &201460004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4286,7 +4286,7 @@ MonoBehaviour:
   - {fileID: 548712440}
   - {fileID: 607913126}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: d9a083f5faab1724fac4097f77ab68a7, type: 2}
 --- !u!114 &213821667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5033,7 +5033,7 @@ MonoBehaviour:
   - {fileID: 938832003}
   - {fileID: 1712450560}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: 14bac100d7cb04646a7f5778c190b46c, type: 2}
 --- !u!114 &236755266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5164,13 +5164,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: a6514d5a18cc81f429e23756019c85c3, type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1594156140}
+        m_TargetAssemblyTypeName: WorldDomination.PromptPopup, Assembly-CSharp
+        m_MethodName: Cancel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5358,6 +5358,153 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 267946676}
+  m_CullTransparentMesh: 1
+--- !u!1 &286614578
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 286614579}
+  - component: {fileID: 286614583}
+  - component: {fileID: 286614582}
+  - component: {fileID: 286614581}
+  - component: {fileID: 286614580}
+  m_Layer: 5
+  m_Name: Fortify
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &286614579
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286614578}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1605365554}
+  m_Father: {fileID: 689536303}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -834, y: -95}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &286614580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286614578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53741500ac0a6c04faa46ffa85dad24a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changeToState: 5
+--- !u!114 &286614581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286614578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 286614582}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1673207922}
+        m_TargetAssemblyTypeName: WorldDomination.GameManager, Assembly-CSharp
+        m_MethodName: Fortify
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &286614582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286614578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &286614583
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286614578}
   m_CullTransparentMesh: 1
 --- !u!1 &292237672
 GameObject:
@@ -6046,7 +6193,7 @@ MonoBehaviour:
   - {fileID: 1846331682}
   - {fileID: 78864535}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: 10b8d1bc053ca2e48a44e479a9463d40, type: 2}
 --- !u!114 &325805350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6424,7 +6571,7 @@ MonoBehaviour:
   - {fileID: 78864535}
   - {fileID: 1358296605}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: 12f6937eb0ac83347b995ead160b5ccf, type: 2}
 --- !u!114 &408526583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6975,7 +7122,7 @@ MonoBehaviour:
   - {fileID: 68114024}
   - {fileID: 1358296605}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: 609fe16ecb2b601428dd529a15285725, type: 2}
 --- !u!114 &455543408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7467,7 +7614,7 @@ MonoBehaviour:
   - {fileID: 607913126}
   - {fileID: 1528029969}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: 257829f1fda6bec4e90fc660c191109f, type: 2}
 --- !u!114 &528330059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7797,7 +7944,7 @@ MonoBehaviour:
   - {fileID: 986732692}
   - {fileID: 1164585758}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: c72f33ad35d6e974b8ec1f0ac275de40, type: 2}
 --- !u!114 &548712441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8791,7 +8938,7 @@ MonoBehaviour:
   - {fileID: 1618182311}
   - {fileID: 213821666}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: 54e3100cea9b3a147b874c7d91c75e64, type: 2}
 --- !u!114 &607913127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9245,7 +9392,7 @@ MonoBehaviour:
   - {fileID: 1530169535}
   - {fileID: 1515933575}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: d1458f20c2dc0a64385fa8f82157999a, type: 2}
 --- !u!114 &624906933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9597,7 +9744,7 @@ MonoBehaviour:
   - {fileID: 171616289}
   - {fileID: 668337544}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: 80428768446b42b45972d34d33aa1400, type: 2}
 --- !u!114 &652633413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9849,7 +9996,7 @@ MonoBehaviour:
   - {fileID: 171616289}
   - {fileID: 652633412}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: e04eedc0576805b439288a5a1e667297, type: 2}
 --- !u!114 &668337545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9894,6 +10041,7 @@ RectTransform:
   - {fileID: 1024249066}
   - {fileID: 1391264162}
   - {fileID: 2068117154}
+  - {fileID: 286614579}
   m_Father: {fileID: 1495275247}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -10827,7 +10975,7 @@ MonoBehaviour:
   - {fileID: 986732692}
   - {fileID: 1548951822}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: 8956c4896fb5c68498e322b09f3f6429, type: 2}
 --- !u!114 &882012681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11382,7 +11530,7 @@ MonoBehaviour:
   - {fileID: 236755265}
   - {fileID: 1693564097}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: 9fcc7d69213cb81449e54f772365fa22, type: 2}
 --- !u!114 &938832004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11834,7 +11982,7 @@ MonoBehaviour:
   - {fileID: 882012680}
   - {fileID: 1548951822}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: 49c07bfc9cd0239448f2d67c4c2eb037, type: 2}
 --- !u!114 &986732693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11860,7 +12008,6 @@ GameObject:
   - component: {fileID: 1000924800}
   - component: {fileID: 1000924801}
   - component: {fileID: 1000924803}
-  - component: {fileID: 1000924802}
   m_Layer: 0
   m_Name: estern_united_states
   m_TagString: North_America
@@ -12146,19 +12293,7 @@ MonoBehaviour:
   - {fileID: 1164585758}
   - {fileID: 1235260214}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
---- !u!114 &1000924802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000924797}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60a88eed737e5cd4f9a9e3e3eeedf065, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  territoryCard: {fileID: 11400000, guid: 6e04fb069ffb6d1418cfc1561fb9f8ed, type: 2}
 --- !u!114 &1000924803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13063,7 +13198,7 @@ MonoBehaviour:
   - {fileID: 1528029969}
   - {fileID: 72733552}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: cce9ad22c93390740926795838c904bd, type: 2}
 --- !u!114 &1082709712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13530,7 +13665,7 @@ MonoBehaviour:
   - {fileID: 986732692}
   - {fileID: 1235260214}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: 1ed7e01c1884f7c49945fae0d07e26e9, type: 2}
 --- !u!114 &1164585759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14243,7 +14378,7 @@ MonoBehaviour:
   - {fileID: 1164585758}
   - {fileID: 1000924801}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: 0742f5c614aef6847b5d2d28ad8c390a, type: 2}
 --- !u!114 &1235260215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14918,7 +15053,7 @@ MonoBehaviour:
   - {fileID: 986732692}
   - {fileID: 882012680}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: 96e5403139dc4b147bbadfd5ed3aee03, type: 2}
 --- !u!1 &1284400914
 GameObject:
   m_ObjectHideFlags: 0
@@ -15386,7 +15521,7 @@ MonoBehaviour:
   - {fileID: 1601613364}
   - {fileID: 1712450560}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: 4615e2e1c981bd14584d6cc589545212, type: 2}
 --- !u!114 &1330229766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15483,7 +15618,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25.95
+  m_fontSize: 15.1
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -15991,7 +16126,7 @@ MonoBehaviour:
   - {fileID: 78864535}
   - {fileID: 408526582}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: de7a4e5a2216cee4688daadecbfd461b, type: 2}
 --- !u!114 &1358296606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16368,9 +16503,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: a6514d5a18cc81f429e23756019c85c3, type: 3}
+      - m_Target: {fileID: 1594156140}
         m_TargetAssemblyTypeName: WorldDomination.PromptPopup, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Confirm
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17468,7 +17603,7 @@ MonoBehaviour:
   - {fileID: 1601613364}
   - {fileID: 1330229765}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: 7b5b76c8296885448b6eb730a45c909a, type: 2}
 --- !u!114 &1515933576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17839,7 +17974,7 @@ MonoBehaviour:
   - {fileID: 1704164573}
   - {fileID: 528330058}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: 548deeb13a10d9041936fc0b41e6c02b, type: 2}
 --- !u!114 &1528029970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18175,7 +18310,7 @@ MonoBehaviour:
   - {fileID: 118149437}
   - {fileID: 1515933575}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: ad4325eb27690024f976a9757e0072ac, type: 2}
 --- !u!114 &1530169536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18474,7 +18609,7 @@ MonoBehaviour:
   - {fileID: 882012680}
   - {fileID: 986732692}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: 39ecc5e6b391f9842aee950ea5a92aba, type: 2}
 --- !u!114 &1548951823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18497,6 +18632,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1594156138}
   - component: {fileID: 1594156139}
+  - component: {fileID: 1594156140}
   m_Layer: 5
   m_Name: Prompt Popup
   m_TagString: Untagged
@@ -18532,6 +18668,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1594156137}
   m_CullTransparentMesh: 1
+--- !u!114 &1594156140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594156137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6514d5a18cc81f429e23756019c85c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popup: {fileID: 1913400980}
+  messageText: {fileID: 1872911797}
+  confirmButton: {fileID: 1433340255}
+  confirmButtonLabelText: {fileID: 887467729}
+  cancelButton: {fileID: 261187134}
+  cancelButtonLabelText: {fileID: 1505524076}
 --- !u!1 &1601613360
 GameObject:
   m_ObjectHideFlags: 0
@@ -18865,7 +19019,7 @@ MonoBehaviour:
   - {fileID: 131792450}
   - {fileID: 1712450560}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: 20be532777cef2842b9a1480846631b1, type: 2}
 --- !u!114 &1601613365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18878,6 +19032,140 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60a88eed737e5cd4f9a9e3e3eeedf065, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1605365553
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1605365554}
+  - component: {fileID: 1605365556}
+  - component: {fileID: 1605365555}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1605365554
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605365553}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 286614579}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1605365555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605365553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Fortify
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281479730
+  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 24
+  m_fontSizeBase: 24
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1605365556
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605365553}
+  m_CullTransparentMesh: 1
 --- !u!1 &1613006984
 GameObject:
   m_ObjectHideFlags: 0
@@ -19304,7 +19592,7 @@ MonoBehaviour:
   - {fileID: 1082709711}
   - {fileID: 72733552}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: 2c011a3056e8c74468d74a4e7def6a14, type: 2}
 --- !u!114 &1618182312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19620,8 +19908,7 @@ MonoBehaviour:
   turnUi: {fileID: 1495275246}
   endGameUi: {fileID: 626707074}
   currentTurnText: {fileID: 691453927}
-  timer: {fileID: 1433712079}
-  map: {fileID: 1280601387}
+  timer: {fileID: 0}
   GameState: 0
 --- !u!1 &1680183251
 GameObject:
@@ -19827,7 +20114,7 @@ MonoBehaviour:
   - {fileID: 1903966838}
   - {fileID: 1601613364}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: e249521d399d4d6418cb0a85e0cda1cc, type: 2}
 --- !u!114 &1680183256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20157,7 +20444,7 @@ MonoBehaviour:
   - {fileID: 236755265}
   - {fileID: 938832003}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: 549b6a844ed3d1448ac73851624bd3aa, type: 2}
 --- !u!114 &1693564098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20711,7 +20998,7 @@ MonoBehaviour:
   - {fileID: 624906932}
   - {fileID: 180447353}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: 026a82cb6c60ac14aa62d9bdee1833c6, type: 2}
 --- !u!114 &1704164574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21040,7 +21327,7 @@ MonoBehaviour:
   - {fileID: 131792450}
   - {fileID: 236755265}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: c8ad88e45dfaeec459a890a05706ec71, type: 2}
 --- !u!114 &1712450561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21290,7 +21577,7 @@ MonoBehaviour:
   - {fileID: 1693564097}
   - {fileID: 236755265}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: 2683be8f4635b004a9c46bb270a59262, type: 2}
 --- !u!114 &1722467288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22310,7 +22597,7 @@ MonoBehaviour:
   - {fileID: 1330229765}
   - {fileID: 1712450560}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: ce49875328a2b444fb1f70028fb86073, type: 2}
 --- !u!114 &1846331683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23055,7 +23342,7 @@ MonoBehaviour:
   - {fileID: 1601613364}
   - {fileID: 1680183255}
   troopCountText: {fileID: 0}
-  territoryCard: {fileID: 0}
+  territoryCard: {fileID: 11400000, guid: 15ec912f4bb347a4f86146259b13ad9e, type: 2}
 --- !u!114 &1903966839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23757,6 +24044,7 @@ GameObject:
   - component: {fileID: 2068117157}
   - component: {fileID: 2068117156}
   - component: {fileID: 2068117155}
+  - component: {fileID: 2068117158}
   m_Layer: 5
   m_Name: End Turn
   m_TagString: Untagged
@@ -23781,7 +24069,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -784, y: -101}
+  m_AnchoredPosition: {x: 50, y: -496}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2068117155
@@ -23878,6 +24166,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2068117153}
   m_CullTransparentMesh: 1
+--- !u!114 &2068117158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068117153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53741500ac0a6c04faa46ffa85dad24a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changeToState: 2
 --- !u!1 &2083086189
 GameObject:
   m_ObjectHideFlags: 0

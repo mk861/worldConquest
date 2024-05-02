@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
         {
             PlacingExtraUnits(e.clickedTerritory.territory);
             return;
-        }       
+        }
     }
 
     public void PlacingStartingUnits(Territory t, Transform location = null)
@@ -80,10 +80,10 @@ public class Player : MonoBehaviour
             Debug.Log("Not enough troops");
             return;
         }
-        
+
         if (!AmIOwner(t))
         {
-            Debug.Log("This territory is already controlled by " + TerritoryManager.Instance.GetTerritoryOwner(t).PlayerName);
+            Debug.Log("This territory is already controlled by "); //+ TerritoryManager.Instance.GetTerritoryOwner(t).PlayerName)
             return;
         }
 
