@@ -213,6 +213,10 @@ namespace WorldDomination
 
                 //MIGHT NOT NEED THIS? 
                 //Destroy(troopObject);
+                for (int i = DefendingTroops.Count - 1; i >= 0;)
+                {
+                    Destroy(DefendingTroops[i]);
+                }
 
                 // No troop left in the territory, set owner to null
                 //CHANGE THIS!!!!!!!!!!!!!!!!!!!!! TERRITORY OWNER CAN'T BE NULL
@@ -236,7 +240,8 @@ namespace WorldDomination
                 OnBattleCompleted?.Invoke(this, onBattleCompletedEventArgs);
 
                 //added
-                Destroy(troopObject);
+                
+                
             }
             else
             {
