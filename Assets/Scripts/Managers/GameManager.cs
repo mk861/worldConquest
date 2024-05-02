@@ -130,15 +130,8 @@ namespace WorldDomination
 
         private void OnPlayersConfirmed(object sender, PlayerSelectorUI.OnPlayersConfirmedEventArgs e)
         {
-            setPlayerNames();
-        }
-
-        private void setPlayerNames()
-        {
             playersSelectionUi.SetActive(true);
-
-
-
+            //CODE HERE TO CHANGE NAMES???? 
             playersSelectionUi.SetActive(false);
 
             map.SetActive(true);
@@ -147,9 +140,6 @@ namespace WorldDomination
             PlayerManager.Instance.StartFirstTurn();
             UpdateTurnText();
         }
-
-
-
 
         #endregion //Unity Engine & Events
 
