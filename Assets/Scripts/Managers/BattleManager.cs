@@ -159,6 +159,12 @@ namespace WorldDomination
             GameManager.Instance.SetState(GameManager.State.Fortify);
         }
 
+        public bool isStillInBattle()
+        {
+            if(AttackingTroops.Count>0 || DefendingTroops.Count>0) return true;
+            return false;
+        }
+
         private IEnumerator BattleRoutine()
         {
             if (AttackingTroops.Count == 0 || DefendingTroops.Count == 0)

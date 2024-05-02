@@ -53,6 +53,7 @@ namespace WorldDomination
 
         private void Start()
         {
+            //ERROR FOR WHAT?? 
             cardUiTemplate.SetActive(false);
         }
 
@@ -77,6 +78,7 @@ namespace WorldDomination
 
         private void ClearUi()
         {
+            //ERROR FOR WHAT???????
             for (int i = 0; i < container.childCount; i++)
             {
                 if (container.GetChild(i).gameObject != cardUiTemplate.gameObject)

@@ -114,7 +114,11 @@ namespace WorldDomination
         {
             Player winningPlayer = TerritoryManager.Instance.GetPlayerOwningAllTerritories();
             if (winningPlayer == null)
+            {
+                //added
+                GameState = State.Fortify;
                 return;
+            }
 
             endGameUi.SetActive(true);
             // Game won
@@ -160,6 +164,11 @@ namespace WorldDomination
         //Either automatically call this after the fortify action is finished or have it on a selectable button.
         public void EndTurn()
         {
+            if(BattleManager.Instance.isStillInBattle())
+            {
+                Debug.Log("Still in battle mode!");
+                return;
+            }
             GoNextTurn();
         }
 
