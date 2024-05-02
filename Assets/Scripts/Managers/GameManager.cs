@@ -130,27 +130,23 @@ namespace WorldDomination
 
         private void OnPlayersConfirmed(object sender, PlayerSelectorUI.OnPlayersConfirmedEventArgs e)
         {
-            playersSelectionUi.SetActive(false);
-            
-/*            playerNameSelector.SetActive(true);
             setPlayerNames();
-            playerNameSelector.SetActive(false);
-            */
+        }
+
+        private void setPlayerNames()
+        {
+            playersSelectionUi.SetActive(true);
+
+
+
+            playersSelectionUi.SetActive(false);
+
             map.SetActive(true);
             GameState = State.PlacingStartingTroops;
             CurrentTurnValue = 1;
             PlayerManager.Instance.StartFirstTurn();
             UpdateTurnText();
         }
-
-/*        private void setPlayerNames()
-        {
-            int _numberOfPlayers = PlayerManager.Instance.playerList.Count;
-            for(int i = 0; i < _numberOfPlayers; i++)
-            {
-                PlayerManager.Instance.playerList[i].PlayerName = playerNameSelector.
-            }
-        }*/
 
 
 

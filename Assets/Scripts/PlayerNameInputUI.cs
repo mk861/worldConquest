@@ -28,8 +28,3 @@ public class PlayerNameInputUI : MonoBehaviour
         title.text = titleName;
     }
 }
-
-
-
-
-
