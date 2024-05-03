@@ -17,20 +17,37 @@ public class Player : MonoBehaviour
     public bool IsTurn { get; set; } = false;
     public bool HasWon { get; set; } = false;
 
-    //added
-    public List<Card> Cards { get; private set; } = new List<Card>();
+    public Player(string name, Color color)
+    {
+        PlayerName = name;
+        PlayerColor = color;
+    }
 
     //added
+    public List<Card> Cards { get; private set; } = new List<Card>();
+    
+    //added
+    /// <summary>
+    /// Creates a new list of cards when script instance is loaded
+    /// </summary>
     private void Awake()
     {
         Cards = new List<Card>();
     }
 
+    /// <summary>
+    /// Creates territory monobahaviour when enabled
+    /// </summary>
     private void OnEnable()
     {
         TerritoryMonoBehaviour.OnClick += TerritoryMonoBehaviour_OnClick;
     }
 
+    /// <summary>
+    /// Places starting or extra troops on territory, based on current game state, when a territory is clicked
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void TerritoryMonoBehaviour_OnClick(object sender, TerritoryMonoBehaviour.OnClickEventArgs e)
     {
         if (!IsTurn)
@@ -49,6 +66,12 @@ public class Player : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// If available troops and game conditions are met, places starting troops on uncontrolled territory
+    /// then moves on to next turn
+    /// </summary>
+    /// <param name="t"></param>
+    /// <param name="location"></param>
     public void PlacingStartingUnits(Territory t, Transform location = null)
     {
         if (SpawnedTroops >= TroopsCount)
@@ -70,6 +93,10 @@ public class Player : MonoBehaviour
         GameManager.Instance.GoNextTurn();
     }
 
+    /// <summary>
+    /// Places extra troops on territory controlled by player if there are enough troops
+    /// </summary>
+    /// <param name="t"></param>
     public void PlacingExtraUnits(Territory t)
     {
         if (SpawnedTroops >= TroopsCount)
@@ -90,6 +117,11 @@ public class Player : MonoBehaviour
         PlaceTroop(t);
     }
 
+    /// <summary>
+    /// Spawns troop at specific location or on mouse position, then assigns it to the territory and updates control
+    /// </summary>
+    /// <param name="t"></param>
+    /// <param name="location"></param>
     void PlaceTroop(Territory t, Transform location = null)
     {
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -108,20 +140,26 @@ public class Player : MonoBehaviour
         Debug.Log("Territory " + t.TerritoryName + " now controlled by " + PlayerName);
     }
 
+    /// <summary>
+    /// Checks wether player is owner of a territory
+    /// </summary>
+    /// <param name="t"></param>
+    /// <returns> true if player is owner, false if player isn't </returns>
     public bool AmIOwner(Territory t) => TerritoryManager.Instance.GetTerritoryOwner(t) == this;
 
+    /// <summary>
+    /// removes TerritoryMonoBehaviour onclick when MonoBehaviour is destroyed
+    /// </summary>
     private void OnDisable()
     {
         TerritoryMonoBehaviour.OnClick -= TerritoryMonoBehaviour_OnClick;
     }
 
-    public Player(string name, Color color)
-    {
-        PlayerName = name;
-        PlayerColor = color;
-    }
-
     //add n number of troops to player
+    /// <summary>
+    /// Adds specified number of troops to player
+    /// </summary>
+    /// <param name="number"></param>
     public void AddTroops(int number)
     {
         TroopsCount += number;
@@ -130,30 +168,14 @@ public class Player : MonoBehaviour
     }
 
     //remove n number of troops from player
+    /// <summary>
+    /// Removes specified number of troops to player 
+    /// </summary>
+    /// <param name="number"></param>
     public void RemoveTroops(int number)
     {
         TroopsCount -= number;
         //make sure troops can't go below 0
         TroopsCount = Mathf.Max(TroopsCount, 0);
-    }
-
-    //add territory to players ownership
-    public void ControlTerritory(Territory territory)
-    {
-        if (!TerritoriesOwned.Contains(territory))
-        {
-            TerritoriesOwned.Add(territory);
-            //mark territory as controlled by player
-        } //else
-    }
-
-    //remove territory from players ownership
-    public void LoseTerritory(Territory territory)
-    {
-        if (TerritoriesOwned.Contains(territory))
-        {
-            TerritoriesOwned.Remove(territory);
-            //lose control of teritory
-        } //
     }
 }

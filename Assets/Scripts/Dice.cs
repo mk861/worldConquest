@@ -11,6 +11,9 @@ public class Dice : MonoBehaviour
     //renderer to change sprites
     private SpriteRenderer rend;
 
+    /// <summary>
+    /// Assigns components when script is first loaded
+    /// </summary>
     void Start()
     {
         rend = GetComponent<SpriteRenderer>();
@@ -19,12 +22,20 @@ public class Dice : MonoBehaviour
     }
 
     //RollTheDice activated when dice clicked on
+    /// <summary>
+    /// Starts dice rolling coroutine when dice is clicked on
+    /// </summary>
     private void OnMouseDown()
     {
         StartCoroutine(RollTheDice());
     }
 
     //coroutine declared 
+    /// <summary>
+    /// Coroutine that rolls the dice, picking a random side
+    /// </summary>
+    /// <param name="callback"></param>
+    /// <returns> wait time </returns>
     public IEnumerator RollTheDice(Action<int> callback = null)
     {
         int randomDiceSide = 0;

@@ -22,6 +22,10 @@ public class PlayerManager : Singleton<PlayerManager>
     //added
     public Player CurrentPlayer { get { return playerList[CurrentPlayerTurnIndex]; } }
 
+    /// <summary>
+    /// Set's the players based on passed in list
+    /// </summary>
+    /// <param name="players"></param>
     public void SetPlayers(List<Player> players)
     {
         playerList = players;
@@ -34,6 +38,9 @@ public class PlayerManager : Singleton<PlayerManager>
         }
     }
 
+    /// <summary>
+    /// Starts first turn of the game
+    /// </summary>
     public void StartFirstTurn()
     {
         CurrentPlayerTurnIndex = 0;
@@ -51,7 +58,7 @@ public class PlayerManager : Singleton<PlayerManager>
     }
 
     /// <summary>
-    /// Go to the next turn
+    /// Goes to the next turn
     /// </summary>
     public void GoNextTurn()
     {
@@ -73,7 +80,7 @@ public class PlayerManager : Singleton<PlayerManager>
     /// Returns the amount of troops based on the amount of players
     /// </summary>
     /// <param name="playerAmount"></param>
-    /// <returns></returns>
+    /// <returns> Number of troops </returns>
     private int GetTroopsByPlayerAmount(int playerAmount)
     {
         Debug.Log("in the problem loop");
@@ -86,6 +93,9 @@ public class PlayerManager : Singleton<PlayerManager>
     }
 }
 
+/// <summary>
+/// Holds player configuration data
+/// </summary>
 [System.Serializable]
 public class PlayerSelectorData
 {
@@ -94,6 +104,9 @@ public class PlayerSelectorData
     public GameObject playerPrefab;
     public Vector3 playerPosition;
 
+    /// <summary>
+    /// Copys player information from prefab and assigns it to player
+    /// </summary>
     [Button]
     public void CopyDataFromPrefab()
     {
@@ -102,6 +115,9 @@ public class PlayerSelectorData
     }
 }
 
+/// <summary>
+/// Defines mapping of troop amounts based on number of players 
+/// </summary>
 [System.Serializable]
 public class TroopsByPlayerAmount
 {

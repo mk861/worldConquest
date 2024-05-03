@@ -62,16 +62,27 @@ namespace WorldDomination
 
         #region Unity Engine & Events
 
+        /// <summary>
+        /// Creates OnGameWon when this object is enabled
+        /// </summary>
         private void OnEnable()
         {
             GameManager.OnGameWon += OnGameWon;
         }
 
+        /// <summary>
+        /// Displays winning text when the game is won
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnGameWon(object sender, GameManager.OnGameWonEventArgs e)
         {
             TMP_Text.text = prefix + e.winningPlayer.PlayerName + suffix;
         }
 
+        /// <summary>
+        /// removes OnGameWon creation when MonoBehaviour is destroyed
+        /// </summary>
         private void OnDisable()
         {
             GameManager.OnGameWon -= OnGameWon;

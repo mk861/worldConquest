@@ -15,6 +15,9 @@ public class PlayerNameInputUI : MonoBehaviour
         set { Debug.Log("You can't set the player name like that"); }
     }
 
+    /// <summary>
+    /// Takes the name that was submitted and assignes it to playerName
+    /// </summary>
     public void SubmitName()
     {
         if (string.IsNullOrEmpty(nameField.text) == false)
@@ -23,6 +26,10 @@ public class PlayerNameInputUI : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Set's the title of the UI box to the desired title name (Enter "Blue's" name:)
+    /// </summary>
+    /// <param name="titleName"></param>
     public void SetTitle(string titleName)
     {
         title.text = titleName;

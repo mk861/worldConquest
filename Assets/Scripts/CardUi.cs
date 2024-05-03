@@ -49,6 +49,10 @@ namespace WorldDomination
 
         #region Unity Engine & Events
 
+        /// <summary>
+        /// Displays popup when card is clicked, offering to trade troops for card
+        /// </summary>
+        /// <param name="eventData"></param>
         public void OnPointerDown(PointerEventData eventData)
         {
             string message = "Do you want to use the card " + Card.name + "? You will obtain " + (int)Card.troopType + " troops";

@@ -23,17 +23,5 @@ namespace WorldDomination
         public Sprite cardSprite;
 
         #endregion //Inspector
-
-        #region Properties
-
-
-        #endregion
-
-        #region Unity Engine & Events
-
-
-
-        #endregion //Unity Engine & Events
-
     }
 }

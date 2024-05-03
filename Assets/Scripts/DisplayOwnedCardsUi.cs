@@ -46,11 +46,17 @@ namespace WorldDomination
 
         #region Unity Engine & Events
 
+        /// <summary>
+        /// Calls UpdateUi method when this object class is enabled
+        /// </summary>
         private void OnEnable()
         {
             UpdateUi();
         }
 
+        /// <summary>
+        /// Turns off cardUiTemplate when script is first loaded
+        /// </summary>
         private void Start()
         {
             //ERROR FOR WHAT?? 
@@ -59,6 +65,9 @@ namespace WorldDomination
 
         #endregion //Unity Engine & Events
 
+        /// <summary>
+        /// Displays current players cards, and clears previous entries
+        /// </summary>
         private void UpdateUi()
         {
             ClearUi();
@@ -76,6 +85,9 @@ namespace WorldDomination
             }
         }
 
+        /// <summary>
+        /// Clears the Ui of objects
+        /// </summary>
         private void ClearUi()
         {
             //ERROR FOR WHAT???????

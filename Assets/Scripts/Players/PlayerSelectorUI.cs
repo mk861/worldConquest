@@ -17,12 +17,17 @@ public class PlayerSelectorUI : MonoBehaviour
     public int maxPlayers = 6;
     public int minPlayers = 2;
 
+    /// <summary>
+    /// Starts Initialise as soon as script is loaded
+    /// </summary>
     private void Start()
     {
-        // player = new PlayerSelectorData();
         Initialise();
     }
 
+    /// <summary>
+    /// Initialises players 
+    /// </summary>
     [Button]
     public void Initialise()
     {
@@ -36,6 +41,9 @@ public class PlayerSelectorUI : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Adds a player and assigns all the player data 
+    /// </summary>
     [Button]
     public void AddPlayer()
     {
@@ -61,6 +69,9 @@ public class PlayerSelectorUI : MonoBehaviour
         //  players.Add(player); MoveTroopsStage
     }
 
+    /// <summary>
+    /// Removes a player and destroys the game object 
+    /// </summary>
     [Button]
     public void RemovePlayer()
     {
@@ -72,6 +83,9 @@ public class PlayerSelectorUI : MonoBehaviour
         selectedPlayers.RemoveAt(selectedPlayers.Count - 1);
     }
 
+    /// <summary>
+    /// Confirms players 
+    /// </summary>
     private List<Player> selectedPlayers = new List<Player>();
     [Button]
     public void ConfirmPlayers()
