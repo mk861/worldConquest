@@ -154,8 +154,6 @@ public class Player : MonoBehaviour
         {
             TerritoriesOwned.Remove(territory);
             //lose control of teritory
-        } //else
+        } //
     }
-
-    //BeginTurn, EndTurn, Serialize/Deserialize???????
 }

@@ -23,6 +23,10 @@ namespace MS.UI
 		#endregion //Inspector
 
 		#region Unity Engine & Events
+
+		/// <summary>
+		/// Reloads the scene
+		/// </summary>
 		public void Reload()
 		{
 			SceneManager.LoadScene(SceneManager.GetActiveScene().name);

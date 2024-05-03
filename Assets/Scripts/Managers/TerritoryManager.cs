@@ -12,6 +12,9 @@ public class TerritoryManager : MonoBehaviour
 
     public List<Territory> Territories => territoryMonoBehaviours.Select(t => t.territory).ToList();
 
+    /// <summary>
+    /// calls this method when the instance of the script is loaded
+    /// </summary>
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -27,28 +30,44 @@ public class TerritoryManager : MonoBehaviour
         territoryMonoBehaviours = FindObjectsOfType<TerritoryMonoBehaviour>();
     }
 
+    /// <summary>
+    /// Assigns the ownership of a territory to a specific player
+    /// </summary>
+    /// <param name="territory"></param>
+    /// <param name="player"></param>
     public void AssignTerritory(Territory territory, Player player)
     {
         territoryOwnership[territory] = player;
         Debug.Log("Assigned " + territory + " to " + player);
     }
 
-    //remove a territory from a player
+
+    /// <summary>
+    /// Removes the ownership of a specific territory from a player
+    /// </summary>
+    /// <param name="territory"></param>
     public void RemoveTerritory(Territory territory)
     {
         if (!territoryOwnership.ContainsKey(territory))
             territoryOwnership.Remove(territory);
-        //add logic
     }
 
-    //change ownership of a territory
+/*    /// <summary>
+    /// Changes the ownership o
+    /// </summary>
+    /// <param name="territory"></param>
+    /// <param name="newOwner"></param>
     public void ChangeTerritoryOwnership(Territory territory, Player newOwner)
     {
         territoryOwnership[territory] = newOwner;
         //add logic
-    }
+    }*/
 
-    //which player owns a territory
+    /// <summary>
+    /// Returns the name of the player who owns a specific territory
+    /// </summary>
+    /// <param name="territory"></param>
+    /// <returns> Player who owns territory, otherwise null </returns>
     public Player GetTerritoryOwner(Territory territory)
     {
         if (territoryOwnership.TryGetValue(territory, out Player owner))
@@ -61,20 +80,20 @@ public class TerritoryManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Are the 2 territories connected?
+    /// Checks if the 2 territories are adjacent to each other 
     /// </summary>
     /// <param name="t1"></param>
     /// <param name="t2"></param>
-    /// <returns></returns>
+    /// <returns> true if the territories are adjacent to each other, otherwise false</returns>
     public bool AreTerritoriesAdjacent(Territory t1, Territory t2)
     {
         return t1.TerritoryMonoBehaviour.IsAdjacentTo(t2);
     }
 
     /// <summary>
-    /// Return true if all territories are occupied
+    /// Returns true if all territories are occupied
     /// </summary>
-    /// <returns></returns>
+    /// <returns> true if all occupied, false otherwise </returns>
     public bool AreAllTerritoriesOccupied()
     {
         for (int i = 0; i < territoryMonoBehaviours.Length; i++)
@@ -86,10 +105,10 @@ public class TerritoryManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Return true if all territories are owned by the the player
+    /// Checks if a specific player owns all of the territories
     /// </summary>
     /// <param name="player"></param>
-    /// <returns></returns>
+    /// <returns> true if player owns all, false otherwise </returns>
     public bool AreAllTerritoriesOwnedByPlayer(Player player)
     {
         for (int i = 0; i < territoryMonoBehaviours.Length; i++)
@@ -101,9 +120,9 @@ public class TerritoryManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Return the player that owns all territories, otherwise return null (Basically return who won the game)
+    /// Returns the player that won the game
     /// </summary>
-    /// <returns></returns>
+    /// <returns> player who won the game, otherwise null </returns>
     public Player GetPlayerOwningAllTerritories()
     {
         List<Player> playerList = PlayerManager.Instance.playerList;
@@ -114,6 +133,4 @@ public class TerritoryManager : MonoBehaviour
         }
         return null;
     }
-
-    // Possibly more methods to handle gameplay mechanics related to territories
 }

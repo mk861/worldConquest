@@ -43,11 +43,19 @@ namespace WorldDomination
 
         #region Unity Engine & Events
 
+        /// <summary>
+        /// Creates instance when script is enabled
+        /// </summary>
         private void OnEnable()
         {
             BattleManager.OnTerritoryConquered += OnTerritoryConquered;
         }
 
+        /// <summary>
+        /// Assigns a card when a territory is conquered and begins the animation
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnTerritoryConquered(object sender, BattleManager.OnTerritoryConqueredEventArgs e)
         {
             Debug.Log("In cardmanager onterritoryconquered");
@@ -66,6 +74,9 @@ namespace WorldDomination
             e.conqueredTerritory.TerritoryMonoBehaviour.territoryCard = null;
         }
 
+        /// <summary>
+        /// Removes instance when the script is disabled
+        /// </summary>
         private void OnDisable()
         {
             BattleManager.OnTerritoryConquered -= OnTerritoryConquered;
@@ -73,6 +84,11 @@ namespace WorldDomination
 
         #endregion //Unity Engine & Events
 
+        /// <summary>
+        /// Coroutine for animation of card popping up, ran once when player recieves a card
+        /// </summary>
+        /// <param name="card"></param>
+        /// <returns> null </returns>
         public IEnumerator AnimateCardPopUp(Card card)
         {
             cardUi.gameObject.SetActive(true);

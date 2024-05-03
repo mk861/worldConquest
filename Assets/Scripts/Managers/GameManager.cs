@@ -95,6 +95,10 @@ namespace WorldDomination
         #endregion
 
         #region Unity Engine & Events
+
+        /// <summary>
+        /// Starts game, player selection
+        /// </summary>
         private void Start()
         {
             /*playerNameSelector.SetActive(false);*/
@@ -104,18 +108,30 @@ namespace WorldDomination
             Debug.Log("waiting for players to be chosen");
             GameState = State.Idle;
         }
+
+        /// <summary>
+        /// Instance of managers and selector created 
+        /// </summary>
         private void OnEnable()
         {
             PlayerSelectorUI.OnPlayersConfirmed += OnPlayersConfirmed;
             BattleManager.OnBattleCompleted += OnBattleCompleted;
         }
+
+        /// <summary>
+        /// Instance of manager and selector removed
+        /// </summary>
         private void OnDisable()
         {
             PlayerSelectorUI.OnPlayersConfirmed -= OnPlayersConfirmed;
             BattleManager.OnBattleCompleted -= OnBattleCompleted;
         }
 
-
+        /// <summary>
+        /// Checks to see if player won game after battle is completed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnBattleCompleted(object sender, BattleManager.OnBattleCompletedEventArgs e)
         {
             Player winningPlayer = TerritoryManager.Instance.GetPlayerOwningAllTerritories();
@@ -128,6 +144,11 @@ namespace WorldDomination
             OnGameWon?.Invoke(this, onGameWonEventArgs);
         }
 
+        /// <summary>
+        /// Starts game initialisation after players are confirmed 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnPlayersConfirmed(object sender, PlayerSelectorUI.OnPlayersConfirmedEventArgs e)
         {
             playersSelectionUi.SetActive(true);
@@ -143,6 +164,9 @@ namespace WorldDomination
 
         #endregion //Unity Engine & Events
 
+        /// <summary>
+        /// Moves game to next players turn
+        /// </summary>
         public void GoNextTurn()
         {
             if (GameState == State.PlacingStartingTroops)
@@ -158,17 +182,23 @@ namespace WorldDomination
             UpdateTurnText();
         }
 
+        /// <summary>
+        /// Begins the attack coroutine to attack player 
+        /// </summary>
         public void Attack()
         {
             StartCoroutine(BattleManager.Instance.ExecuteBattle());
         }
-
         public void Fortify()
         {
 
         }
 
-        //Call this, to make it most effective, create a UI script that toggles between different UI's when the OnStateChanged event is listened to.
+        /// <summary>
+        /// Sets the state of the game to a new state
+        /// </summary>
+        /// <param name="newState"></param>
+        /// <remarks> Could create a UI script that toggles between differnt UI's when the OnStateChanged event is listened to </remarks>
         public void SetState(State newState)
         {
             if (GameState == newState)
@@ -178,20 +208,26 @@ namespace WorldDomination
             OnStateChanged?.Invoke(GameState);
         }
 
-        //Either automatically call this after the fortify action is finished or have it on a selectable button.
+        /// <summary>
+        /// Ends the current players turn, goes to next
+        /// </summary>
+        /// <remarks> could call this automatically after fortify or could make into specific button </remarks>
         public void EndTurn()
         {
             GoNextTurn();
         }
 
+        /// <summary>
+        /// Updates the text stating what player is currently playing
+        /// </summary>
         private void UpdateTurnText()
         {
             currentTurnText.text = PlayerManager.Instance.playerList[PlayerManager.Instance.CurrentPlayerTurnIndex].PlayerName + "'s Turn";
         }
 
-
-
-
+        /// <summary>
+        /// Debug use - stops me needing to initialise the game every time
+        /// </summary>
         [Button]
         public void DEBUG_SETPLAYERSPOSITIONS()
         {

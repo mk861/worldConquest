@@ -1,5 +1,15 @@
 using WorldDomination;
 
+
+
+
+
+/*Redundant class, not in use, please ignore*/
+
+
+
+
+
 public class DraftState : GameState
 {
     public DraftState(GameManager gameManager) : base(gameManager) { }

@@ -66,6 +66,14 @@ namespace WorldDomination
 
         #endregion //Unity Engine & Events
 
+        /// <summary>
+        /// Shows a specific message and sets up all buttons
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="confirmButtonLabel"></param>
+        /// <param name="cancelButtonLabel"></param>
+        /// <param name="confirmAction"></param>
+        /// <param name="cancelAction"></param>
         public void ShowMessage(string message, string confirmButtonLabel, string cancelButtonLabel, Action confirmAction, Action cancelAction = null)
         {
             popup.transform.SetAsLastSibling();
@@ -78,11 +86,17 @@ namespace WorldDomination
             this.cancelAction = cancelAction;
         }
 
+        /// <summary>
+        /// Invokes the action when confirmed
+        /// </summary>
         public void Confirm()
         {
             confirmAction?.Invoke();
         }
 
+        /// <summary>
+        /// Cancels the action
+        /// </summary>
         public void Cancel()
         {
             cancelAction?.Invoke();

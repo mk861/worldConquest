@@ -1,8 +1,4 @@
-﻿/*==============================================================================
-
-==============================================================================*/
-
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 [DefaultExecutionOrder(-30000)]
@@ -13,7 +9,7 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     private static T _instance;
 
     /// <summary>
-    /// Access the instance, if no instance is available one will be automatically be created
+    /// Accesses the instance, if no instance is available one will be automatically be created
     /// </summary>
 	public static T Instance
     {
@@ -32,9 +28,9 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     }
 
     /// <summary>
-    /// Return the available instance, this property will not create an instance, only use it if you are sure the singleton is ready
+    /// Returns the available instance, this property will not create an instance and only use it if we are sure the singleton is ready
     /// </summary>
-    /// <remarks>Useful to call when accessing the Instance from OnDisable to avoid unity error when creating objects from closing the editor</remarks>
+    /// <remarks> can be useful to call when accessing the Instance from OnDisable to avoid unity error when creating objects from closing the editor </remarks>
     public static T InstanceAvailable
     {
         get
@@ -48,6 +44,9 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 
     #region Unity Specific Functions
 
+    /// <summary>
+    /// Instance is created when Instance of Singleton script is loaded
+    /// </summary>
     protected virtual void Awake()
     {
         CreateInstance();
@@ -55,6 +54,9 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 
     #endregion // Unity Specific Functions
 
+    /// <summary>
+    /// Creates an Instance if there isn't already one present, otherwise destroys it
+    /// </summary>
     private void CreateInstance()
     {
         if (_instance != null && _instance != this)

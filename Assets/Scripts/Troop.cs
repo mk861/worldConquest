@@ -46,7 +46,7 @@ namespace WorldDomination
         }
 
         /// <summary>
-        /// The player this trop is assigned
+        /// The player this troop is assigned to 
         /// </summary>
         public Player Owner { get; set; }
 
@@ -61,7 +61,7 @@ namespace WorldDomination
         public Territory AttackingTerritory { get; private set; }
 
         /// <summary>
-        /// How many troop is this troop worth (i.e Cavalry is 5 while Infantry is 1)
+        /// How many troop is this troop worth (cavalry-5, artillery-10)
         /// </summary>
         public int TroopValue
         {
@@ -78,16 +78,25 @@ namespace WorldDomination
 
         #region Unity Engine & Events
 
+        /// <summary>
+        /// Sets the initial  territory position when this script is first loaded
+        /// </summary>
         private void Start()
         {
             initialTerritoryPosition = Transform.position;
         }
 
+        /// <summary>
+        /// Moves the troop object to the position where the mouse is when clicked
+        /// </summary>
         private void OnMouseDown()
         {
             clickOffset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
 
+        /// <summary>
+        /// Troop follows position of the mouse when it's dragged
+        /// </summary>
         public void OnMouseDrag()
         {
             if (!Owner.IsTurn)
@@ -97,6 +106,9 @@ namespace WorldDomination
             transform.position = new Vector3(newPosition.x, newPosition.y, 0);
         }
 
+        /// <summary>
+        /// Handles troop movements and initiates battles based on mouse release position
+        /// </summary>
         public void OnMouseUp()
         {
             if (!Owner.IsTurn)
@@ -162,12 +174,13 @@ namespace WorldDomination
             }
         }
 
+        /// <summary>
+        /// Returns the troops to their initial position
+        /// </summary>
         public void ReturnToInitialPosition()
         {
             Transform.position = initialTerritoryPosition;
         }
-
         #endregion //Unity Engine & Events
-
     }
 }

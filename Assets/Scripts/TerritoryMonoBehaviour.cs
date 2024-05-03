@@ -23,6 +23,9 @@ public class TerritoryMonoBehaviour : MonoBehaviour
     //added
     public Card territoryCard;
 
+    /// <summary>
+    /// Initialises variables when script is first called
+    /// </summary>
     void Start()
     {
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
@@ -31,24 +34,20 @@ public class TerritoryMonoBehaviour : MonoBehaviour
         territory = new Territory(id, territoryName, spriteRenderer, this);
     }
 
+    /// <summary>
+    /// Invokes onClick event when territory is clicked, passing current territory as the argument
+    /// </summary>
     void OnMouseDown()
     {
-        territory.OnClick();
-
         onClickEventArgs.clickedTerritory = this;
         OnClick?.Invoke(this, onClickEventArgs);
     }
 
-    //experimental...method will be called whenever update of visuals needed
-    public void UpdateVisuals()
-    {
-        if (territory.Owner != null)
-        {
-            territory.TerritorySprite.color = territory.Owner.PlayerColor;
-        }
-        troopCountText.text = territory.TroopsCount.ToString();
-    }
-
+    /// <summary>
+    /// Check wether territory
+    /// </summary>
+    /// <param name="other"></param>
+    /// <returns> An array of the adjacent territories <returns>
     public bool IsAdjacentTo(Territory other)
     {
         return Array.Exists(adjacentTerritories, t => t.territory == other);

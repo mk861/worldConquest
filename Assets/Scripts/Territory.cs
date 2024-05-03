@@ -35,6 +35,13 @@ public class Territory
     public SpriteRenderer TerritorySprite { get; set; }
     public TerritoryMonoBehaviour TerritoryMonoBehaviour { get; private set; }
 
+    /// <summary>
+    /// Constructor for territory class
+    /// </summary>
+    /// <param name="id"></param>
+    /// <param name="name"></param>
+    /// <param name="sprite"></param>
+    /// <param name="territoryMonoBehaviour"></param>
     public Territory(string id, string name, SpriteRenderer sprite, TerritoryMonoBehaviour territoryMonoBehaviour)
     {
         TerritoryID = id;
@@ -44,25 +51,32 @@ public class Territory
         TerritoryMonoBehaviour = territoryMonoBehaviour;
     }
 
-    //add troops to territory
+    /// <summary>
+    /// Adds troops to to a territory
+    /// </summary>
+    /// <param name="troops"></param>
     public void AddTroops(List<Troop> troops)
     {
         foreach (Troop t in troops)
         {
             Troops.Add(t);
         }
-        //max number of troops????? 
-        UpdateTroopCountDisplay();
     }
 
+    /// <summary>
+    /// Adds a single troop to a territory
+    /// </summary>
+    /// <param name="troop"></param>
     public void AddTroop(Troop troop)
     {
         Troops.Add(troop);
         TerritoryManager.Instance.AssignTerritory(this, Owner);
-        UpdateTroopCountDisplay();
     }
 
-    //remove troops from territory
+    /// <summary>
+    /// Removes troops from a given territory
+    /// </summary>
+    /// <param name="number"></param>
     public void RemoveTroops(int number)
     {
         Owner.RemoveTroops(number);
@@ -74,47 +88,6 @@ public class Territory
         if (Troops.Count == 0)
         {
             TerritoryManager.Instance.RemoveTerritory(this);
-        }
-        //ensure can't go below 0
-        UpdateTroopCountDisplay();
-    }
-
-
-    //assign ownership of territory to different player
-    public void ChangeOwnership(Player newOwner)
-    {
-        TerritoryManager.Instance.ChangeTerritoryOwnership(this, newOwner);
-        UpdateTerritoryColor();
-        //more logic needed
-    }
-
-    //METHODS BELOW MIGHT NOT STAY...CONSIDERING
-    public void Highlight()
-    {
-        //highlight sprite
-    }
-
-    public void SetNormal()
-    {
-        //revert to default appearance
-    }
-
-    public void OnClick()
-    {
-        //handle OnClick events 
-    }
-
-    private void UpdateTroopCountDisplay()
-    {
-        //update label/ other UI elements with TroopCount probably?
-    }
-
-    private void UpdateTerritoryColor()
-    {
-        //change color to match owner???
-        if (Owner != null)
-        {
-            TerritorySprite.color = Owner.PlayerColor;
         }
     }
 }
