@@ -208,24 +208,31 @@ namespace WorldDomination
             {
                 GameObject troopObject = DefendingTroops[0].gameObject;
                 // Attacker won
-                DefendingTerritory.RemoveTroops(1);
-                // Remove a troop from the defending territory and player
                 DefendingTroops.RemoveAt(0);
+                DefendingTerritory.RemoveTroops(1);
+                Destroy(troopObject);
+                // Remove a troop from the defending territory and player
+
 
                 // No troop left in the territory, set owner to null
                 //CHANGE THIS!!!!!!!!!!!!!!!!!!!!! TERRITORY OWNER CAN'T BE NULL
                 if (DefendingTerritory.TroopsCount <= 0)
                 {
-                    TerritoryManager.Instance.RemoveTerritory(DefendingTerritory);
+                    // TerritoryManager.Instance.RemoveTerritory(DefendingTerritory);
 
                     // Territory conquered
                     onTerritoryConqueredEventArgs.conqueredTerritory = DefendingTerritory;
                     onTerritoryConqueredEventArgs.conqueringPlayer = AttackingTroops[0].Owner;
                     OnTerritoryConquered?.Invoke(this, onTerritoryConqueredEventArgs);
+                    DefendingTerritory.AddTroops(AttackingTroops);
                 }
-                if (AttackingTerritory.TroopsCount <= 0)
+                else
                 {
-                    TerritoryManager.Instance.RemoveTerritory(AttackingTerritory);
+                    // Return all troops to their original position
+                    for (int i = 0; i < AttackingTroops.Count; i++)
+                    {
+                        AttackingTroops[i].ReturnToInitialPosition();
+                    }
                 }
 
                 onBattleCompletedEventArgs.winningTerritory = AttackingTerritory;
@@ -253,17 +260,17 @@ namespace WorldDomination
                 onBattleCompletedEventArgs.winningTerritory = DefendingTerritory;
                 onBattleCompletedEventArgs.losingTerritory = AttackingTerritory;
                 OnBattleCompleted?.Invoke(this, onBattleCompletedEventArgs);
+
+                // Return all troops to their original position
+                for (int i = 0; i < AttackingTroops.Count; i++)
+                {
+                    AttackingTroops[i].ReturnToInitialPosition();
+                }
             }
 
             yield return new WaitForSeconds(battleEndDelay);
 
             DisableDice();
-
-            // Return all troops to their original position
-            for (int i = 0; i < AttackingTroops.Count; i++)
-            {
-                AttackingTroops[i].ReturnToInitialPosition();
-            }
 
             yield return new WaitForSeconds(battleEndDelay);
 
